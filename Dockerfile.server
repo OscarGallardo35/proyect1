@@ -1,0 +1,19 @@
+﻿FROM node:18-alpine
+
+WORKDIR /app
+
+COPY server/package*.json ./
+RUN npm install --omit=dev
+
+COPY server/src ./src
+
+ENV NODE_ENV=production
+ENV HOST=0.0.0.0
+ENV PORT=4000
+
+RUN mkdir -p /app/data
+VOLUME ["/app/data"]
+
+EXPOSE 4000
+
+CMD ["node", "src/index.js"]

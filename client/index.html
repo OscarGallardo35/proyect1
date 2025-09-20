@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Ecommerce CRM</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Panel Ecommerce + CRM</h1>
+      <p class="subtitle">Control de catálogo, pedidos y tickets con dropshipping automático</p>
+    </header>
+
+    <main>
+      <section class="module" id="catalog">
+        <div class="module-header">
+          <h2>Catálogo</h2>
+          <button id="reload-products">Recargar</button>
+        </div>
+        <table id="products-table">
+          <thead>
+            <tr>
+              <th>Producto</th>
+              <th>Proveedor</th>
+              <th>Precio</th>
+              <th>Stock</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <form id="product-form" class="form-inline">
+          <input type="text" name="name" placeholder="Nombre" required />
+          <input type="text" name="supplierId" placeholder="Proveedor" required />
+          <input type="number" name="price" step="0.01" placeholder="Precio" required />
+          <input type="number" name="cost" step="0.01" placeholder="Costo" required />
+          <input type="number" name="stock" placeholder="Stock" required />
+          <input type="text" name="category" placeholder="Categoría" />
+          <button type="submit">Crear producto</button>
+        </form>
+      </section>
+
+      <section class="module" id="orders">
+        <div class="module-header">
+          <h2>Pedidos</h2>
+          <button id="reload-orders">Recargar</button>
+        </div>
+        <table id="orders-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Cliente</th>
+              <th>Total</th>
+              <th>Estado</th>
+              <th>Proveedor</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+
+      <section class="module" id="tickets">
+        <div class="module-header">
+          <h2>Tickets CRM</h2>
+          <button id="reload-tickets">Recargar</button>
+        </div>
+        <table id="tickets-table">
+          <thead>
+            <tr>
+              <th>Ticket</th>
+              <th>Pedido</th>
+              <th>Cliente</th>
+              <th>Estado</th>
+              <th>Prioridad</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+
+      <section class="module" id="events">
+        <div class="module-header">
+          <h2>Eventos</h2>
+          <button id="reload-events">Recargar</button>
+        </div>
+        <ul id="events-list"></ul>
+      </section>
+    </main>
+
+    <footer>
+      <span>API base: <code id="api-url"></code></span>
+      <span id="status-indicator">Sincronizando…</span>
+    </footer>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>

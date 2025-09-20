@@ -1,0 +1,15 @@
+﻿{
+  "name": "ecommerce-system",
+  "version": "1.0.0",
+  "description": "Sistema base de ecommerce con CRM y dropshipping",
+  "private": true,
+  "scripts": {
+    "install": "npm --prefix server install",
+    "dev": "npm --prefix server run dev",
+    "start": "npm --prefix server run start",
+    "seed": "npm --prefix server run seed"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
